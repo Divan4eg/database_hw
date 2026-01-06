@@ -42,18 +42,18 @@ services:
 ```
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'temp';
 SELECT User FROM mysql.user;
-![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/5.png)
 
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 SHOW GRANTS FOR 'sys_temp'@'localhost';
 ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'temp';
-![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/6.png)
 
 docker cp /home/pda/sakila.sql mysql_docker:/tmp/sakila.sql
 В консоли mysql
 USE test_db;
 SOURCE /tmp/sakila.sql;
-![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/7.png)
 
 ### Задание 2.
 
@@ -61,6 +61,7 @@ SOURCE /tmp/sakila.sql;
 
 ### Решение 2.
 
-![Решение2](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+![Решение2](https://github.com/Divan4eg/database_hw/blob/main/img/8.png)
+https://github.com/Divan4eg/database_hw/blob/main/img/task2.ods
 
 
