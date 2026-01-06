@@ -40,8 +40,11 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
 ```
+
+```
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'temp';
 SELECT User FROM mysql.user;
+```
 ![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/5.png)
 
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
