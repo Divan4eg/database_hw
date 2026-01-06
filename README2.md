@@ -27,7 +27,33 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 ### Решение 1. 
 
+```
+version: '3.8'
 
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_docker
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+```
+CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'temp';
+SELECT User FROM mysql.user;
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
+SHOW GRANTS FOR 'sys_temp'@'localhost';
+ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'temp';
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+
+docker cp /home/pda/sakila.sql mysql_docker:/tmp/sakila.sql
+В консоли mysql
+USE test_db;
+SOURCE /tmp/sakila.sql;
+![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
 
 ### Задание 2.
 
@@ -35,6 +61,6 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 ### Решение 2.
 
-![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
+![Решение2](https://github.com/Divan4eg/database_hw/blob/main/img/1.png)
 
 
