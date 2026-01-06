@@ -25,7 +25,9 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.
 
-### Решение 1. 
+### Решение 1.
+
+Создал docker-compose:
 
 ```
 version: '3.8'
@@ -47,15 +49,21 @@ SELECT User FROM mysql.user;
 ```
 ![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/5.png)
 
+```
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 SHOW GRANTS FOR 'sys_temp'@'localhost';
 ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'temp';
+```
 ![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/6.png)
 
+```
 docker cp /home/pda/sakila.sql mysql_docker:/tmp/sakila.sql
+```
 В консоли mysql
+```
 USE test_db;
 SOURCE /tmp/sakila.sql;
+```
 ![Решение1](https://github.com/Divan4eg/database_hw/blob/main/img/7.png)
 
 ### Задание 2.
